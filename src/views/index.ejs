@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Home Page</title>
+
+    <style type="text/css" media="screen">
+      * {
+        box-sizing: border-box;
+        font-family: "Ubuntu", monospace;
+      }
+      body {
+        /* padding: 60px; */
+        background-color: skyblue;
+        text-decoration-color: white;
+        font-size: 20px;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      ul{
+        list-style-type: square ;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Task Lists</h1>
+    <div>
+    <!-- <form>
+      <div class="form-group">
+        <label for="task">Task Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="task"
+          aria-describedby="emailHelp"
+          placeholder="Enter Task Title"
+          value="<%=tasks[0].ttitle%>"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Task Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          placeholder="Enter Task Description"
+          value="<%=tasks[0].tdesc%>"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form> -->
+    <ul>
+        <% tasks.map(taskItem => { %>
+          <li>
+          <b><%=taskItem.tid%></b> <b><%= taskItem.ttitle %></b>: <%= taskItem.tdesc %>
+          </li>
+        <% }); %>
+      </ul>
+</div>
+  </body>
+</html>
