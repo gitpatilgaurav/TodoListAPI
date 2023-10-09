@@ -18,8 +18,11 @@ const pool = createPool({
 });
 pool.query(`select * from tasks`, (err, res) => {
   if (err) {
-    if (err) throw err;
+    throw err;
   }
+  // else{
+  //   console.log(res)
+  // }
 });
 
 module.exports = pool;
