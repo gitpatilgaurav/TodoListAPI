@@ -5,16 +5,34 @@ exports.updateTaskById = (req, res) => {
   const ttitle = req.body.ttitle;
   const tdesc = req.body.tdesc;
 
-  pool.query(
-    "update tasks set ttitle = ?, tdesc = ? where tid = ?",
-    [ttitle, tdesc, taskId],
-    (err, result) => {
-      if (err) {
-        res.status(500).send(err.sqlMessage);
-        // console.log(err);
+  // console.log(taskId);
+  pool.query("select tid from tasks where tid = ?", [taskId], (err, result) => {
+    if (err) {
+      res.status(500).send(err.sqlMessage);
+    } else {
+      if (result.length === 0) {
+        res.status(404).send("Task not found.");
       } else {
-        res.status(200).send("Task Updated");
+        pool.query(
+          "update tasks set ttitle = ?, tdesc = ? where tid = ?",
+          [ttitle, tdesc, taskId],
+          (err, result) => {
+            if (err) {
+              res.status(500).send(err.sqlMessage);
+              // console.log(err);
+            } else {
+              res.status(200).send("Task Updated");
+            }
+          }
+        );
       }
     }
-  );
+  });
+ 
 };
+
+
+
+
+
+

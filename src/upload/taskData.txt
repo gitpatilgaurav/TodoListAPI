@@ -1,0 +1,18 @@
+[
+  {
+    "ttitle": "Clean the house Vacuum the floors",
+    "tdesc": "Write a detailed project proposal for the upcoming project."
+  },
+  {
+    "ttitle": "Clean",
+    "tdesc": "Buy milk, eggs, bread, and vegetables from the grocery store."
+  },
+  {
+    "ttitle": "Cleanasf asd",
+    "tdesc": "Set up a meeting with John to discuss the project timeline."
+  },
+  {
+    "ttitle": "Pay the utility bills",
+    "tdesc": "Pay the electricity, water, and internet bills by the end of the week."
+  }
+]

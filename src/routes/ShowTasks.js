@@ -1,6 +1,5 @@
 const express = require("express");
-const { showTask } = require("../controllers/ShowTaskModel");
+const { tasks } = require("../controllers/ShowTasksModel");
 const router = express.Router();
-router.get("/", showTask);
-
+router.get("/",tasks);
 module.exports = router;

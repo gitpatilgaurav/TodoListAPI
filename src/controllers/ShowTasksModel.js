@@ -1,5 +1,6 @@
 const pool = require("../models/Task");
-exports.showTask =(req, res) => {
+
+exports.tasks =(req, res) => {
     pool.query(`select * from tasks`, (err, result) => {
       if (err) {
         res.status(500).render(err.message);

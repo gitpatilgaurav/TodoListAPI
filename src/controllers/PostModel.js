@@ -4,8 +4,8 @@ exports.createTask = (req, res) => {
   const tid = req.body.tid;
   const ttitle = req.body.ttitle.toLowerCase();
   const tdesc = req.body.tdesc;
-  console.log(req.body)
 //duplicate entry logic
+
   pool.query(
     "select * from tasks where ttitle = ?",
     [ttitle],
@@ -14,6 +14,7 @@ exports.createTask = (req, res) => {
         res.status(500).send(err.sqlMessage);
       } else {
         if (result.length > 0) {
+          // console.log(result)
           res.status(409).send("Task title already exists.");
         } else {
           //insertion logic
